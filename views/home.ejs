@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- Start of HTML Page -->
+<html>
+    <!-- Head Tag -->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            <%=title %>
+        </title>
+        <!-- External Style Sheet -->
+        <link rel="stylesheet" href="css/home.css" >
+        <!-- End of Head Tag -->
+    </head>
+    <!-- Start of body Tag -->
+    <body>
+        <h1> Todo List App</h1>
+        <!-- Start of Container  -->
+        <div class="container">
+            <!-- Tasks adding container -->
+            <div class="new-task-list">
+                <!-- Form for addiing task information to DB -->
+                <form class="task-form" id="new-task-form" role="search" action="/create-task" method="post">
+                    <div class="task-div">
+                        <input class="task-input id="task-input" type="text" name="description" placeholder="Enter your task..." required>
+                    </div>
+                    <div class="date-container">
+                        <input class="date" type="date" id="date" min=""name="date" required>
+                    </div>
+                    <div class="dropdown">
+                        <input type="text" class="textBox" name="category" placeholder="Choose task Category" readonly>
+                          <div class="option">
+                            <div onclick="display('Personal')"> Personal </div>
+                            <div onclick="display('Work')" > Work </div>
+                            <div onclick="display('Household')"> Household </div>
+                            <div onclick="display('others')"> others </div>
+                          </div>
+                    </div>
+                    <!-- Task Add button -->
+                    <div class="add-task-btn">
+                        <input class="add-task-submit" type="submit" value="Add Task">
+                    </div>   
+                </form>
+            </div>
+        </div>
+        <!-- Tasks-list container -->
+        <div class="task-list-info">
+            <h1>Task List</h1>
+            <!-- Form display and perform delete action -->
+            <form action="/delete-task" method="get">
+                <div class="table-responsive">
+                    <!-- Table to display task details -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="checkBox" >Select</th>
+                            <th class="desch">Task Description</th>
+                            <th>Category</th>
+                            <th class="due-date">Due</th>
+                          
+                        </tr>
+                    </thead>
+                    <% for(let i of task_list){ %>
+                    <tr>
+                        <td class="checkBox"><input type="checkbox" name="<%=i._id%>"></td>
+                        <td class="desc"><%=i.description%></td>
+                        <td class="category"><%=i.category%></td>
+                        <td class="due-date"><%=i.date.getDate() +"-"+ (i.date.getMonth()+1)+"-"+ i.date.getFullYear()%></td>
+                    </tr>
+                    <%}%>
+                </table>
+            </div>
+                <!-- Task delete button -->
+                <div class="delete-task-div">
+                    <input type="submit" class="delete-btn" value="Delete Task">
+                </div>
+            </form>
+        </div>
+        <!-- Jquery JS file added here -->
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <!-- Javasscript file added here -->
+        <script type="text/javascript" src="js/script.js"></script>
+  </body>
+    </body>
+</html>

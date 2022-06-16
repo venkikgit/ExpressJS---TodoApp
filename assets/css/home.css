@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/* Body related */
+body{
+   background: #fafafa;
+  
+}
+
+
+h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5vh;
+ 
+
+}
+
+/* Task input form related */
+.task-form{
+    position:relative ;
+    height: 80px;
+    width: 90%;
+    left: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background:;
+    padding: 12px 20px;
+
+}
+
+/* Task information input related */
+.task-div{
+    position: relative;
+    margin: auto;
+    width: 500px;
+    height: 48px;
+    margin-left: -10px;
+}
+
+.task-div .task-input{
+    width: 100%;
+    height: 100%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05); 
+}
+/* Date picker */
+.date-container{
+    position: relative;
+    margin: auto;
+    border: none;
+    outline: none;
+    width: 300px;
+    height: 50px;
+}
+.date-container .date{
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 1.5rem;
+    box-shadow: 0 32px 30px rgba(0,0,0,0.05) ;
+    border-radius: 10px;
+
+}
+
+/* Dropdown menu related */
+.dropdown{
+    position: relative;
+    margin: auto;
+    width: 250px;
+    height: 50px;
+    z-index: 5;
+    
+}
+
+
+.dropdown input{
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background: #fff;
+    border: none;
+    outline: none;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    padding: 12px 20px;
+    border-radius: 10px;
+}
+
+.dropdown .option{
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    background:#fff;
+    box-shadow: 0 32px 30px rgba(0,0,0,0.05) ;
+    border-radius: 10px;
+    overflow: hidden;
+    display: none;
+}
+
+.dropdown::before{
+
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 10000;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #333;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+    transition: 0.5s;
+    pointer-events: none;
+  
+    
+}
+
+.dropdown.active::before{
+    top: 25px;
+    transform: rotate(-225deg);
+
+}
+
+
+
+
+.dropdown.active .option{
+    display: block;
+    overflow: hidden;
+}
+
+.dropdown .option div{
+
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+.dropdown .option div:hover{
+    background: #62baea;
+}
+
+/* Tasks Add button related */
+.add-task-btn{
+    position: relative;
+    top: 2px;
+    width: 100px;
+    height: 50px;
+
+}
+
+.add-task-btn .add-task-submit{ 
+    width: 100%;
+    height: 100%;
+    background: #04AA6D;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Tasklist display related */
+.task-list-info  h1{
+    align-items: center;
+}
+
+/* Table to display task details */
+.table{
+    border-collapse: collapse;
+    width: 90%;
+    position: relative;
+    left: 5vw;
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+.table td,.table th{
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+
+}
+
+.table th{
+
+    background-color: #04AA6D;
+    color: #fff;
+}
+
+.table .checkBox{
+    /* position: relative;
+    left: 10px; */
+}
+
+.checkBox input{
+    position: relative;
+    left: 28px;
+}
+
+.table .desc{
+    width: 800px;
+    padding-left: 50px;
+}
+
+.table .category{
+    text-align: center;
+}
+
+.table .due-date{
+    width: 200px;
+    text-align: center;
+}
+
+
+.table tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+/* Deleting task */
+.delete-task-div{
+    position:relative;
+    width: 120px;
+    height: 50px;
+    top: 25px;
+    left: 85.5%;
+}
+
+.delete-task-div .delete-btn{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: red;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
